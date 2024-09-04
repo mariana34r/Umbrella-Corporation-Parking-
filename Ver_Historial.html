@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Historial</title>
+    <link rel="stylesheet" href="Ver_Historial.css">
+    <link rel="icon" href="Imagen_logoo1.png">
+    <script src="Ver_Historial.js"></script>
+</head>
+<body>
+    
+
+
+    <div class="container_titulo">
+        <img src="imagenn.png" class="logo" alt="Main Logo">
+        <nav class="menu">
+            <div class="menu-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Registrar_Vehiculo.html">Registrar Vehiculo</a></li>
+                    <li><a href="Ver_Registrados.html">Ver Vehiculos Registrado</a></li>
+                    <li><a href="Ver_Historial.html"class="active">Ver Historial de vehiculos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="contenedor">
+        <h1 class="titulo-principal">Historial de Salidas</h1>
+        <table id="tabla-historial" class="tabla">
+            <thead>
+                <tr>
+                    <th class="encabezado-tabla">Placa</th>
+                    <th class="encabezado-tabla">Tipo</th>
+                    <th class="encabezado-tabla">Hora de Entrada</th>
+                    <th class="encabezado-tabla">Hora de Salida</th>
+                    <th class="encabezado-tabla">Espacio</th>
+                    <th class="encabezado-tabla">Costo</th>
+                    <th class="encabezado-tabla">Eliminar</th> <!-- Nueva columna para el botón de eliminar -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán las filas con JavaScript -->
+            </tbody>
+        </table>
+        <button id="volver" class="boton">Volver</button>
+    </div>
+
+
+
+</body>
+</html>

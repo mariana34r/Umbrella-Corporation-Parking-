@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Vehiculo</title>
+    <link rel="stylesheet" href="Registrar_vehiculo.css">
+    <link rel="icon" href="Imagen_logoo1.png">
+    <script src="app.js"></script>
+</head>
+<body>
+    
+
+    <div class="container_titulo">
+        <img src="imagenn.png" class="logo" alt="Main Logo">
+        <nav class="menu">
+            <div class="menu-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Registrar_Vehiculo.html"class="active">Registrar Vehiculo</a></li>
+                    <li><a href="Ver_Registrados.html">Ver Vehiculos Registrado</a></li>
+                    <li><a href="Ver_Historial.html">Ver Historial de vehiculos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="contenedor">
+        <h1 class="titulo-principal">Registro de Vehículos</h1>
+    
+        <!-- Registrar -->
+        <form id="form-entrada" class="seccion-formulario">
+            <div class="grupo-formulario">
+                <label for="placa">Placa:</label>
+                <input type="text" id="placa" name="placa" placeholder="Ingrese la placa del vehículo">
+            </div>
+            <div class="grupo-formulario">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo">
+                    <option value="">Seleccione el tipo</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Automóvil">Automóvil</option>
+                    <option value="Camioneta">Camioneta</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="espacio">Espacio:</label>
+                <input type="text" id="espacio" name="espacio" placeholder="Ingrese el espacio de estacionamiento">
+            </div>
+            <div class="grupo-formulario">
+                <label for="hora-entrada">Hora de Entrada:</label>
+                <input type="datetime-local" id="hora-entrada" name="hora-entrada">
+            </div>
+            <button type="submit" class="boton">Registrar Entrada</button>
+        </form>
+    </div>
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('hora-entrada');
+    const mensajeError = document.getElementById('mensaje-error');
+
+    function obtenerFechaHoy() {
+        const hoy = new Date();
+        const año = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0'); 
+        const dia = String(hoy.getDate()).padStart(2, '0');
+        return `${año}-${mes}-${dia}`;
+    }
+
+    function obtenerHoraActual() {
+        const hoy = new Date();
+        const horas = String(hoy.getHours()).padStart(2, '0');
+        const minutos = String(hoy.getMinutes()).padStart(2, '0');
+        return `${horas}:${minutos}`;
+    }
+
+    function establecerFechaYHoraHoy() {
+        const fechaHoy = obtenerFechaHoy();
+        const horaActual = obtenerHoraActual();
+        input.setAttribute('min', fechaHoy + 'T' + horaActual);
+        input.setAttribute('max', fechaHoy + 'T' + horaActual);
+    }
+
+    input.addEventListener('change', function() {
+        const fechaSeleccionada = input.value.split('T')[0];
+        const horaSeleccionada = input.value.split('T')[1];
+        const fechaHoy = obtenerFechaHoy();
+        const horaActual = obtenerHoraActual();
+
+        if (fechaSeleccionada !== fechaHoy || horaSeleccionada !== horaActual) {
+            mensajeError.textContent = 'Solo se puede registrar el día y la hora actuales.';
+            mensajeError.style.display = 'block';
+            input.value = ''; 
+        } else {
+            mensajeError.style.display = 'none';
+        }
+    });
+
+    establecerFechaYHoraHoy();
+});
+</script>
+
+
+
+</body>
+</html>

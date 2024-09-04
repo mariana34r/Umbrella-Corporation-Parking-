@@ -1,0 +1,383 @@
+body{
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/29e9dc88-5c53-404f-b7da-1fd37c04edfe/ddwbzh3-fff049a4-f824-43ea-8cac-0a6a292d2ed9.png/v1/fill/w_1600,h_898,q_80,strp/resident_evil_4__leon_and_ashley__by_raidenwgt_ddwbzh3-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODk4IiwicGF0aCI6IlwvZlwvMjllOWRjODgtNWM1My00MDRmLWI3ZGEtMWZkMzdjMDRlZGZlXC9kZHdiemgzLWZmZjA0OWE0LWY4MjQtNDNlYS04Y2FjLTBhNmEyOTJkMmVkOS5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.IMhZ4h8eZ1u7devCimP-kFqtinC8DkI2imQFcqw5oFg");
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+h1 {
+    margin: 0;
+    margin-right: 20px;
+    
+}
+
+
+
+.container_titulo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #02020200;
+}
+
+
+.container1 {
+    top: 72px;
+    width: 80%;
+    height: 80vh;
+    background-color: rgba(223, 223, 223, 0);
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        margin-top: 80px;
+        width: 90%;
+        height: 40vh;
+        padding: 10px;
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+
+
+
+
+.logo {
+    width: 180px;
+    cursor: pointer;
+    top: -10px; /* Asegura que el logo esté en la parte superior de la ventana del navegador */
+    left: 50px; /* Ajusta la distancia desde el borde izquierdo de la ventana del navegador */
+    margin-top: 0; /* Elimina el margen superior, ya que top: 0 lo posiciona correctamente */
+    position: fixed; /* Usa 'fixed' en lugar de 'absolute' para que el logo permanezca en la parte superior */
+    z-index: 1100; /* Asegúrate de que el z-index sea mayor que el del menú */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Menú principal */
+.menu {
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Menú con z-index más bajo que el del logo */
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-content {
+    margin-left: 150px; /* Ajusta este margen para mover el contenido a la derecha */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    display: inline-block; /* Cambiado a inline-block para aplicar la línea debajo del texto */
+    position: relative; /* Necesario para la pseudo-clase ::after */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    font-family: 'Poppins';
+    left: 20px;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; /* Altura de la línea */
+    background-color: red; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente la línea está oculta */
+    transform-origin: bottom right; /* Comienza la animación desde la derecha */
+    transition: transform 0.3s ease; /* Animación de expansión */
+}
+
+
+.menu ul li a:hover::after,
+.menu ul li a.active::after {
+    transform: scaleX(1); /* Expande la línea a lo largo del texto */
+}
+
+
+
+
+
+.overlay-button {
+    display: inline-block; /* Ensure the link behaves like a button */
+    padding: 10px 20px; /* Adjust padding to your needs */
+    font-size: 49px; /* Adjust font size to your needs */
+    color: #ffffff; /* Text color */
+    background-color: #5d6dff; /* Background color of the button */
+    border: 2px solid #ffffff; /* Add a solid white border */
+    border-radius: 60px; /* Rounded corners */
+    text-align: center; /* Center text within the button */
+    text-decoration: none; /* Remove underline from the link */
+    cursor: pointer; /* Change cursor to pointer */
+    position: absolute; /* Positioning for overlay effect */
+    top: 86%;
+    left: 31.5%;
+    transform: translate(-50%, -50%); /* Center the button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visual effect */
+}
+
+.overlay-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+
+.active + .overlay-button {
+    display: block; /* Muestra el botón solo si la imagen activa es la primera */
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenedor {
+    max-width: 2100px;
+    margin: 240px auto;
+    margin-top: 320px;
+    padding: 10px;
+    background: #ffffff86;
+    border-radius: 8px;
+    box-shadow: 0 30px 40px rgb(90, 78, 78);
+    border: 1px solid #ff0000;
+}
+
+.titulo-principal, .titulo-secundario {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.seccion-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.grupo-formulario input[type="text"], .grupo-formulario select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.boton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #2980b9;
+}
+
+.tabla {
+    width: 100%;
+    max-width: 900px; /* Ajusta esto según sea necesario */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
+    min-height: 100px; /* Ajusta según el tamaño vertical deseado */
+    table-layout: fixed; /* Hace que las columnas se estiren uniformemente */
+}
+
+.encabezado-tabla, .celda-tabla {
+    border: 1px solid #ddd;
+    padding: 15px; /* Aumenta el padding para hacer las celdas más grandes */
+    text-align: left;
+}
+
+.encabezado-tabla {
+    background-color: #d4403b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.fila-par {
+    background-color: #f9f9f9;
+}
+
+.fila-hover:hover {
+    background-color: #f1f1f1;
+}
+/* Estilo específico para las celdas dentro del tbody */
+tbody td {
+    padding: 0px; /* Aumentado padding para filas más altas */
+    border-bottom: 1px solid #775a5a;
+    line-height: 1.8;
+}
+
+
+/* Añadir líneas verticales entre columnas */
+.celda-tabla {
+    border-right: 1px solid #ddd; /* Línea vertical entre columnas */
+}
+
+.celda-tabla:last-child {
+    border-right: none; /* Elimina la línea derecha en la última columna */
+}
+
+
+
+
+.tabla {
+    width: 100%;
+    max-width: 900px; /* Ajusta esto según sea necesario */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+    background-color: #92777762; /* Color de fondo para la tabla */
+    border-radius: 8px; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Evita el desbordamiento de bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para la tabla */
+}
+
+.encabezado-tabla {
+    background-color: #dd4747; /* Color de fondo más suave para el encabezado */
+    color: #fff;
+    font-weight: bold;
+    text-align: center; /* Centra el texto en el encabezado */
+}
+
+.encabezado-tabla th {
+    padding: 15px;
+    border-bottom: 2px solid #c0392b; /* Línea de separación más gruesa */
+}
+
+.fila-par {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.fila-impar {
+    background-color: #fff; /* Color de fondo para filas impares */
+}
+
+.fila-hover:hover {
+    background-color: #f9f9f9; /* Color de fondo al pasar el cursor */
+}
+
+.celda-tabla {
+    border-right: 1px solid #ddd; /* Línea vertical entre columnas */
+    padding: 12px; /* Padding aumentado para celdas más grandes */
+    text-align: center; /* Centra el texto en las celdas */
+}
+
+.celda-tabla:last-child {
+    border-right: none; /* Elimina la línea derecha en la última columna */
+}
+
+tbody tr:last-child td {
+    border-bottom: none; /* Elimina la línea inferior en la última fila */
+}
+
+@media (max-width: 768px) {
+  
+    body {
+        background-image: url("pixelcut-export.png");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .container_titulo,
+    .container1,
+    .contenedor ,
+    .carousel,
+    .arrow,
+    .logo,
+    .menu,
+    .overlay-button,
+    .form-container {
+        display: none;
+    }
+
+  
+    .mobile-background {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+}

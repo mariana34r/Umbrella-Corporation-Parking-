@@ -1,0 +1,376 @@
+body{
+    background-image: url("pixelcut-export (18).png");
+    background-size: cover;
+}
+
+
+
+
+
+
+
+h1 {
+    margin: 0;
+    margin-right: 20px;
+    
+}
+
+
+
+.container_titulo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #02020200;
+}
+
+
+.container1 {
+    top: 72px;
+    width: 80%;
+    height: 80vh;
+    background-color: rgba(223, 223, 223, 0);
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        margin-top: 80px;
+        width: 90%;
+        height: 40vh;
+        padding: 10px;
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0) scale(1.1);
+}
+
+.carousel img.transition {
+    transform: translateX(-50%) scale(1);
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .carousel img {
+        width: 100%;
+    }
+
+    .carousel .prev, .carousel .next {
+        padding: 5px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.336);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Añade una sombra sutil al hacer hover */
+}
+
+
+
+
+
+
+/* Ajusta el logo para que esté por encima del menú */
+.logo {
+    width: 200px;
+    cursor: pointer;
+    left: 50px;
+    margin-top: 58px;
+    position: absolute; /* Asegúrate de que el logo pueda superponerse a otros elementos */
+    z-index: 1100; /* Asegúrate de que el z-index sea mayor que el del menú */
+}
+
+
+
+
+@font-face {
+    font-family: 'Starjhol.ttf';
+    src: url(Nexa-Heavy.ttf) format('TrueType');
+}
+
+
+
+
+
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* Menú principal */
+.menu {
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Menú con z-index más bajo que el del logo */
+    font-family: 'MeltedMoster';
+    font-size: 22px;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-content {
+    margin-left: 150px; /* Ajusta este margen para mover el contenido a la derecha */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    display: inline-block; /* Cambiado a inline-block para aplicar la línea debajo del texto */
+    position: relative; /* Necesario para la pseudo-clase ::after */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    font-family: 'Poppins';
+    left: 20px;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; /* Altura de la línea */
+    background-color: red; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente la línea está oculta */
+    transform-origin: bottom right; /* Comienza la animación desde la derecha */
+    transition: transform 0.3s ease; /* Animación de expansión */
+}
+
+
+.menu ul li a:hover::after,
+.menu ul li a.active::after {
+    transform: scaleX(1); /* Expande la línea a lo largo del texto */
+}
+
+
+
+
+
+.overlay-button {
+    display: inline-block; /* Ensure the link behaves like a button */
+    padding: 10px 20px; /* Adjust padding to your needs */
+    font-size: 49px; /* Adjust font size to your needs */
+    color: #ffffff; /* Text color */
+    background-color: #5d6dff; /* Background color of the button */
+    border: 2px solid #ffffff; /* Add a solid white border */
+    border-radius: 60px; /* Rounded corners */
+    text-align: center; /* Center text within the button */
+    text-decoration: none; /* Remove underline from the link */
+    cursor: pointer; /* Change cursor to pointer */
+    position: absolute; /* Positioning for overlay effect */
+    top: 86%;
+    left: 31.5%;
+    transform: translate(-50%, -50%); /* Center the button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visual effect */
+}
+
+.overlay-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+
+.active + .overlay-button {
+    display: block; /* Muestra el botón solo si la imagen activa es la primera */
+}
+
+
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #00000000;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 620px;
+    position: fixed;
+    top: 62%; /* Ajusta esta propiedad para cambiar la posición vertical */
+    left: 51.5%; /* Ajusta esta propiedad para cambiar la posición horizontal */
+    transform: translate(-50%, -50%); /* Centra el contenedor en la pantalla */
+    text-align: center;
+    border: 1px solid red; /* Añade un borde rojo de 2px de grosor */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #ccc;
+    background-color: #000000;
+    font-size: 25px;
+}
+
+label {
+    width: 100px; /* Ajusta el ancho de la etiqueta según tus necesidades */
+    margin-right: 80px; /* Aumenta el margen derecho para separar más del campo de entrada */
+    font-weight: bold;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #a72828;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.form-container button:hover {
+    background-color: #686e6a;
+}
+
+
+@media (max-width: 768px) {
+  
+    body {
+        background-image: url("pixelcut-export.png");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .container_titulo,
+    .container1,
+    .carousel,
+    .arrow,
+    .logo,
+    .menu,
+    .overlay-button,
+    .form-container {
+        display: none;
+    }
+
+  
+    
+}
+
+@media (min-width: 769px) {
+    body {
+        background-image: url("pixelcut-export (18).png");
+        background-size: cover;
+    }
+
+    .mobile-background {
+        display: none;
+    }
+}

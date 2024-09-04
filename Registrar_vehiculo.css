@@ -1,0 +1,206 @@
+body{
+    background-size: cover;
+    background-image: url("https://external-preview.redd.it/V-08n_jxf2yyIb8GE5QfYpFJlGKPOwsp2ljshv9O-Iw.jpg?auto=webp&s=24c401a463f4f52decaea77cf72d1af232d63ae4");
+}
+
+
+
+
+.container_titulo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #02020200;
+}
+
+
+
+
+
+
+.logo {
+    width: 220px;
+    cursor: pointer;
+    left: 50px;
+    margin-top: 48px;
+    position: absolute; /* Asegúrate de que el logo pueda superponerse a otros elementos */
+    z-index: 1100; /* Asegúrate de que el z-index sea mayor que el del menú */
+}
+
+
+
+/* Menú principal */
+.menu {
+    background-color: rgba(255, 255, 255, 0.733);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Menú con z-index más bajo que el del logo */
+    font-family: 'MeltedMoster';
+    font-size: 22px;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-content {
+    margin-left: 150px; /* Ajusta este margen para mover el contenido a la derecha */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 15px;
+    display: inline-block; /* Cambiado a inline-block para aplicar la línea debajo del texto */
+    position: relative; /* Necesario para la pseudo-clase ::after */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    font-family: 'Poppins';
+    left: 20px;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; /* Altura de la línea */
+    background-color: red; /* Color de la línea */
+    transform: scaleX(0); /* Inicialmente la línea está oculta */
+    transform-origin: bottom right; /* Comienza la animación desde la derecha */
+    transition: transform 0.3s ease; /* Animación de expansión */
+}
+
+.menu ul li a:hover::after,
+.menu ul li a.active::after {
+    transform: scaleX(1); /* Expande la línea a lo largo del texto */
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 120px auto;
+    padding: 50px;
+    margin-top: 200px;
+    background: #ffffff86;
+    border-radius: 8px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 1);
+    border: 1px solid #ff0000;
+}
+.titulo-principal, .titulo-secundario {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.seccion-formulario {
+    margin-bottom: 20px;
+}
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+.grupo-formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.grupo-formulario input[type="text"], .grupo-formulario select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.boton {
+    background-color: #db3434;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.boton:hover {
+    background-color: #2980b9;
+}
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.encabezado-tabla, .celda-tabla {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.encabezado-tabla {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+.fila-par {
+    background-color: #f9f9f9;
+}
+.fila-hover:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  
+    body {
+        background-image: url("pixelcut-export.png");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .container_titulo,
+    .container1,
+    .contenedor ,
+    .carousel,
+    .arrow,
+    .logo,
+    .menu,
+    .overlay-button,
+    .form-container {
+        display: none;
+    }
+
+  
+    .mobile-background {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+}
