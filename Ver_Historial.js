@@ -2,18 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const tablaHistorial = document.querySelector('#tabla-historial tbody');
     const botonVolver = document.getElementById('volver');
 
-    // Obtener datos del localStorage
+
     function obtenerDatos() {
         const datos = localStorage.getItem('vehiculos');
         return datos ? JSON.parse(datos) : [];
     }
 
-    // Guardar datos en el localStorage
     function guardarDatos(datos) {
         localStorage.setItem('vehiculos', JSON.stringify(datos));
     }
 
-    // Actualizar historial
+
     function actualizarHistorial() {
         const vehiculos = obtenerDatos();
         let html = '';

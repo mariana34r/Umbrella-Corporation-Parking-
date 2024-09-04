@@ -128,7 +128,7 @@ h1 {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .prev {
@@ -141,7 +141,7 @@ h1 {
 
 .arrow:hover {
     background-color: rgba(255, 255, 255, 0.336);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Añade una sombra sutil al hacer hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
 }
 
 
@@ -149,14 +149,13 @@ h1 {
 
 
 
-/* Ajusta el logo para que esté por encima del menú */
 .logo {
     width: 200px;
     cursor: pointer;
     left: 50px;
     margin-top: 58px;
-    position: absolute; /* Asegúrate de que el logo pueda superponerse a otros elementos */
-    z-index: 1100; /* Asegúrate de que el z-index sea mayor que el del menú */
+    position: absolute; 
+    z-index: 1100; 
 }
 
 
@@ -181,14 +180,14 @@ h1 {
 }
 
 
-/* Menú principal */
+
 .menu {
     background-color: rgba(0, 0, 0, 0.733);
     padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Menú con z-index más bajo que el del logo */
+    z-index: 1000;
     font-family: 'MeltedMoster';
     font-size: 22px;
     left: 0;
@@ -197,7 +196,7 @@ h1 {
 }
 
 .menu-content {
-    margin-left: 150px; /* Ajusta este margen para mover el contenido a la derecha */
+    margin-left: 150px;
 }
 
 .menu ul {
@@ -216,9 +215,9 @@ h1 {
     text-decoration: none;
     color: #ffffff;
     padding: 10px 15px;
-    display: inline-block; /* Cambiado a inline-block para aplicar la línea debajo del texto */
-    position: relative; /* Necesario para la pseudo-clase ::after */
-    overflow: hidden; /* Asegura que el contenido no se desborde */
+    display: inline-block; 
+    position: relative;
+    overflow: hidden; 
     font-family: 'Poppins';
     left: 20px;
 }
@@ -229,17 +228,17 @@ h1 {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 3px; /* Altura de la línea */
-    background-color: red; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente la línea está oculta */
-    transform-origin: bottom right; /* Comienza la animación desde la derecha */
-    transition: transform 0.3s ease; /* Animación de expansión */
+    height: 3px; 
+    background-color: red; 
+    transform: scaleX(0);
+    transform-origin: bottom right; 
+    transition: transform 0.3s ease; 
 }
 
 
 .menu ul li a:hover::after,
 .menu ul li a.active::after {
-    transform: scaleX(1); /* Expande la línea a lo largo del texto */
+    transform: scaleX(1); 
 }
 
 
@@ -247,30 +246,30 @@ h1 {
 
 
 .overlay-button {
-    display: inline-block; /* Ensure the link behaves like a button */
-    padding: 10px 20px; /* Adjust padding to your needs */
-    font-size: 49px; /* Adjust font size to your needs */
-    color: #ffffff; /* Text color */
-    background-color: #5d6dff; /* Background color of the button */
-    border: 2px solid #ffffff; /* Add a solid white border */
-    border-radius: 60px; /* Rounded corners */
-    text-align: center; /* Center text within the button */
-    text-decoration: none; /* Remove underline from the link */
-    cursor: pointer; /* Change cursor to pointer */
-    position: absolute; /* Positioning for overlay effect */
+    display: inline-block; 
+    padding: 10px 20px;
+    font-size: 49px; 
+    color: #ffffff; 
+    background-color: #5d6dff; 
+    border: 2px solid #ffffff; 
+    border-radius: 60px; 
+    text-align: center; 
+    text-decoration: none; 
+    cursor: pointer; 
+    position: absolute; 
     top: 86%;
     left: 31.5%;
-    transform: translate(-50%, -50%); /* Center the button */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visual effect */
+    transform: translate(-50%, -50%); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 .overlay-button:hover {
-    background-color: #e0e0e0; /* Slightly darker background on hover */
+    background-color: #e0e0e0; 
 }
 
 
 .active + .overlay-button {
-    display: block; /* Muestra el botón solo si la imagen activa es la primera */
+    display: block; 
 }
 
 
@@ -284,11 +283,11 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 620px;
     position: fixed;
-    top: 62%; /* Ajusta esta propiedad para cambiar la posición vertical */
-    left: 51.5%; /* Ajusta esta propiedad para cambiar la posición horizontal */
-    transform: translate(-50%, -50%); /* Centra el contenedor en la pantalla */
+    top: 62%; 
+    left: 51.5%;
+    transform: translate(-50%, -50%); 
     text-align: center;
-    border: 1px solid red; /* Añade un borde rojo de 2px de grosor */
+    border: 1px solid red; 
 }
 
 .form-group {
@@ -301,8 +300,8 @@ h1 {
 }
 
 label {
-    width: 100px; /* Ajusta el ancho de la etiqueta según tus necesidades */
-    margin-right: 80px; /* Aumenta el margen derecho para separar más del campo de entrada */
+    width: 100px; 
+    margin-right: 80px; 
     font-weight: bold;
 }
 

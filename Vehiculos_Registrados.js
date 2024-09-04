@@ -3,23 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonVolver = document.getElementById('volver');
 
     const tarifas = {
-        'Moto': 1000,      // tarifa por minuto
-        'Automóvil': 2000, // tarifa por minuto
-        'Camioneta': 3000  // tarifa por minuto
+        'Moto': 1000,      
+        'Automóvil': 2000, 
+        'Camioneta': 3000  
     };
 
-    // Obtener datos del localStorage
     function obtenerDatos() {
         const datos = localStorage.getItem('vehiculos');
         return datos ? JSON.parse(datos) : [];
     }
 
-    // Guardar datos en el localStorage
+
     function guardarDatos(datos) {
         localStorage.setItem('vehiculos', JSON.stringify(datos));
     }
 
-    // Actualizar la tabla de vehículos
     function actualizarTabla() {
         const vehiculos = obtenerDatos();
         let html = '';
@@ -42,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tablaVehiculos.querySelector('tbody').innerHTML = html;
     }
 
-    // Registrar salida
+ 
     window.registrarSalida = function(placa) {
         const vehiculos = obtenerDatos();
         const vehiculo = vehiculos.find(v => v.placa === placa && !v.salida);
@@ -64,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Funcionalidad para el botón "Volver"
+
     botonVolver.addEventListener('click', () => {
-        // Puedes definir qué acción realizar al presionar "Volver", por ejemplo, regresar a una página anterior o esconder elementos.
+
         alert('Volviendo a Registrar Vehiculo');
     });
 

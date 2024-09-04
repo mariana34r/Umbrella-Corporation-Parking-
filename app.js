@@ -5,23 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonVerHistorial = document.getElementById('ver-historial');
 
     const tarifas = {
-        'Moto': 1000,      // tarifa por minuto
-        'Automóvil': 2000, // tarifa por minuto
-        'Camioneta': 3000  // tarifa por minuto
+        'Moto': 1000,      
+        'Automóvil': 2000, 
+        'Camioneta': 3000  
     };
 
-    // Obtener datos del localStorage
     function obtenerDatos() {
         const datos = localStorage.getItem('vehiculos');
         return datos ? JSON.parse(datos) : [];
     }
 
-    // Guardar datos en el localStorage
+
     function guardarDatos(datos) {
         localStorage.setItem('vehiculos', JSON.stringify(datos));
     }
 
-    // Actualizar la tabla de vehículos
+
     function actualizarTabla() {
         const vehiculos = obtenerDatos();
         let html = '';
@@ -44,19 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
         tablaVehiculos.querySelector('tbody').innerHTML = html;
     }
 
-    // Validar formato de placa
+
     function validarPlaca(placa) {
         const regex = /^[A-Z]{3}-\d{3}$/;
         return regex.test(placa);
     }
 
-    // Validar que el espacio sea un número positivo hasta 100
+
     function validarEspacio(espacio) {
         const numero = parseInt(espacio, 10);
         return Number.isInteger(numero) && numero > 0 && numero <= 100;
     }
 
-    // Registrar entrada
+
     function registrarEntrada(evento) {
         evento.preventDefault();
         const placa = document.getElementById('placa').value;
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formularioEntrada.reset();
     }
 
-    // Registrar salida
+
     window.registrarSalida = function(placa) {
         const vehiculos = obtenerDatos();
         const vehiculo = vehiculos.find(v => v.placa === placa && !v.salida);
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Actualizar historial
+
     function actualizarHistorial() {
         const vehiculos = obtenerDatos();
         let html = '';

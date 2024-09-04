@@ -23,8 +23,8 @@ body{
     cursor: pointer;
     left: 50px;
     margin-top: 48px;
-    position: absolute; /* Asegúrate de que el logo pueda superponerse a otros elementos */
-    z-index: 1100; /* Asegúrate de que el z-index sea mayor que el del menú */
+    position: absolute; 
+    z-index: 1100; 
 }
 
 
@@ -36,7 +36,7 @@ body{
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Menú con z-index más bajo que el del logo */
+    z-index: 1000; 
     font-family: 'MeltedMoster';
     font-size: 22px;
     left: 0;
@@ -45,7 +45,7 @@ body{
 }
 
 .menu-content {
-    margin-left: 150px; /* Ajusta este margen para mover el contenido a la derecha */
+    margin-left: 150px; 
 }
 
 .menu ul {
@@ -64,9 +64,9 @@ body{
     text-decoration: none;
     color: #000000;
     padding: 10px 15px;
-    display: inline-block; /* Cambiado a inline-block para aplicar la línea debajo del texto */
-    position: relative; /* Necesario para la pseudo-clase ::after */
-    overflow: hidden; /* Asegura que el contenido no se desborde */
+    display: inline-block;
+    position: relative; 
+    overflow: hidden;
     font-family: 'Poppins';
     left: 20px;
 }
@@ -77,16 +77,16 @@ body{
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 3px; /* Altura de la línea */
-    background-color: red; /* Color de la línea */
-    transform: scaleX(0); /* Inicialmente la línea está oculta */
-    transform-origin: bottom right; /* Comienza la animación desde la derecha */
-    transition: transform 0.3s ease; /* Animación de expansión */
+    height: 3px;
+    background-color: red; 
+    transform: scaleX(0); 
+    transform-origin: bottom right; 
+    transition: transform 0.3s ease;
 }
 
 .menu ul li a:hover::after,
 .menu ul li a.active::after {
-    transform: scaleX(1); /* Expande la línea a lo largo del texto */
+    transform: scaleX(1); 
 }
 
 
