@@ -60,10 +60,11 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+     document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('hora-entrada');
     const mensajeError = document.getElementById('mensaje-error');
 
+   
     function obtenerFechaHoy() {
         const hoy = new Date();
         const año = hoy.getFullYear();
@@ -72,28 +73,19 @@
         return `${año}-${mes}-${dia}`;
     }
 
-    function obtenerHoraActual() {
-        const hoy = new Date();
-        const horas = String(hoy.getHours()).padStart(2, '0');
-        const minutos = String(hoy.getMinutes()).padStart(2, '0');
-        return `${horas}:${minutos}`;
-    }
-
-    function establecerFechaYHoraHoy() {
+  
+    function establecerFechaHoy() {
         const fechaHoy = obtenerFechaHoy();
-        const horaActual = obtenerHoraActual();
-        input.setAttribute('min', fechaHoy + 'T' + horaActual);
-        input.setAttribute('max', fechaHoy + 'T' + horaActual);
+        input.setAttribute('min', fechaHoy + 'T00:00');
+        input.setAttribute('max', fechaHoy + 'T23:59');
     }
 
+   
     input.addEventListener('change', function() {
-        const fechaSeleccionada = input.value.split('T')[0];
-        const horaSeleccionada = input.value.split('T')[1];
+        const fechaSeleccionada = input.value.split('T')[0]; 
         const fechaHoy = obtenerFechaHoy();
-        const horaActual = obtenerHoraActual();
 
-        if (fechaSeleccionada !== fechaHoy || horaSeleccionada !== horaActual) {
-            mensajeError.textContent = 'Solo se puede registrar el día y la hora actuales.';
+        if (fechaSeleccionada !== fechaHoy) {
             mensajeError.style.display = 'block';
             input.value = ''; 
         } else {
@@ -101,7 +93,8 @@
         }
     });
 
-    establecerFechaYHoraHoy();
+   
+    establecerFechaHoy();
 });
 </script>
 
