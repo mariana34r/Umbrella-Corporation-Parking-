@@ -118,7 +118,7 @@ h1 {
     transform: translateY(-50%);
     font-size: 2rem;
     color: white;
-    background-color: transparent; /* Asegura que el fondo sea transparente */
+    background-color: transparent; 
     border: 1px solid white;
     border-radius: 50%;
     width: 40px;
