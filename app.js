@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         guardarDatos(vehiculos);
         actualizarTabla();
         formularioEntrada.reset();
+        alert('Su carro ha sido registrado correctamente.');
     }
 
 

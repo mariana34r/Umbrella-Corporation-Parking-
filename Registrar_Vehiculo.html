@@ -48,7 +48,7 @@
                 <input type="text" id="espacio" name="espacio" placeholder="Ingrese el espacio de estacionamiento">
             </div>
             <div class="grupo-formulario">
-                <label for="hora-entrada">Hora de Entrada:</label>
+                <label for="hora-entrada">Hora de Entrada: (Autiomatica)</label>
                 <input type="datetime-local" id="hora-entrada" name="hora-entrada">
             </div>
             <button type="submit" class="boton">Registrar Entrada</button>
@@ -60,42 +60,18 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('hora-entrada');
-    const mensajeError = document.getElementById('mensaje-error');
-
-   
-    function obtenerFechaHoy() {
-        const hoy = new Date();
-        const año = hoy.getFullYear();
-        const mes = String(hoy.getMonth() + 1).padStart(2, '0'); 
-        const dia = String(hoy.getDate()).padStart(2, '0');
-        return `${año}-${mes}-${dia}`;
-    }
-
-  
-    function establecerFechaHoy() {
-        const fechaHoy = obtenerFechaHoy();
-        input.setAttribute('min', fechaHoy + 'T00:00');
-        input.setAttribute('max', fechaHoy + 'T23:59');
-    }
-
-   
-    input.addEventListener('change', function() {
-        const fechaSeleccionada = input.value.split('T')[0]; 
-        const fechaHoy = obtenerFechaHoy();
-
-        if (fechaSeleccionada !== fechaHoy) {
-            mensajeError.style.display = 'block';
-            input.value = ''; 
-        } else {
-            mensajeError.style.display = 'none';
+   function getCurrentDateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0'); 
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
         }
-    });
 
-   
-    establecerFechaHoy();
-});
+       
+        document.getElementById('hora-entrada').value = getCurrentDateTime();
 </script>
 
 
