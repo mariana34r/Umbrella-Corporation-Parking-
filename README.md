@@ -15,7 +15,7 @@ Esta es una pagina wed que permite a los administradores de un parqueadero gesti
 
 
 ## Descripcion🚀
-Esta Pagina los administradores podran registrar la entrada de un vehiculo que entre al parqueadero su permanencia en este y calcula automaticamnete el costo del servcio de parqeadero.
+Esta Pagina los administradores podran registrar la entrada de un vehiculo que entre al parqueadero su permanencia en este y calcula automaticamnete el costo del servcio de parqueadero.
 
 
 
