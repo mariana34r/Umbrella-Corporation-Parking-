@@ -1,4 +1,4 @@
-# 🔬💀Umbrella Corporation Parking" 💀🔬
+# 🔬💀Umbrella Corporation "Parking" 💀🔬
 
 Esta es una pagina wed que permite a los administradores de un parqueadero gestionar saliday entrada con la tematica de Umbrella Corporation.
 
