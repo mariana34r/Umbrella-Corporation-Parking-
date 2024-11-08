@@ -36,18 +36,19 @@ Esta Pagina los administradores podran registrar la entrada de un vehiculo que e
 ## Capturas de la Página 📷
 
 ### Captura de la Seccion Home 🔬
-![Captura del Home](https://github.com/user-attachments/assets/0ab5cfe1-44c2-4a80-a98f-5185d3a10e60)
+![image](https://github.com/user-attachments/assets/2123f68e-4583-4ce2-8f4f-5ef2a3fc1261)
+
 
 ### Captura de la Seccion Registrar Vehiculos 💉
-![Captura del Home](https://github.com/user-attachments/assets/58171558-08e2-4587-a799-9b59cfef529e)
+![image](https://github.com/user-attachments/assets/07d8080a-8080-4b8c-b054-176f2c134a2c)
 
 
 ### Captura de la Seccion vehiculos Registrados 🦠
-![Captura del Home](https://github.com/user-attachments/assets/8dc97691-faa9-4898-a15a-5e906292e270)
+![image](https://github.com/user-attachments/assets/09143bdc-d92b-4e9c-ad4f-ca8e16f03400)
 
 
 ### Captura de la Seccion Historial de salida 🏢
-![Captura del Home](![image](https://github.com/user-attachments/assets/5518f0f0-8393-46db-93ed-77be0c5e9a49)
+![image](https://github.com/user-attachments/assets/12be5c24-7215-4898-b7a2-bbf1008efb98)
 
 
 
